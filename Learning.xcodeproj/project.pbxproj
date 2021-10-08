@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		BD0EF07A270FB69E00555913 /* LearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EF079270FB69E00555913 /* LearningApp.swift */; };
-		BD0EF07C270FB69E00555913 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EF07B270FB69E00555913 /* ContentView.swift */; };
+		BD0EF07C270FB69E00555913 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EF07B270FB69E00555913 /* HomeView.swift */; };
 		BD0EF07E270FB6A000555913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD0EF07D270FB6A000555913 /* Assets.xcassets */; };
 		BD0EF081270FB6A000555913 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD0EF080270FB6A000555913 /* Preview Assets.xcassets */; };
+		BD0EF08E270FB91A00555913 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EF08D270FB91A00555913 /* ContentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BD0EF076270FB69E00555913 /* Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0EF079270FB69E00555913 /* LearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningApp.swift; sourceTree = "<group>"; };
-		BD0EF07B270FB69E00555913 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BD0EF07B270FB69E00555913 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BD0EF07D270FB6A000555913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD0EF080270FB6A000555913 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BD0EF08D270FB91A00555913 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,11 @@
 			isa = PBXGroup;
 			children = (
 				BD0EF079270FB69E00555913 /* LearningApp.swift */,
-				BD0EF07B270FB69E00555913 /* ContentView.swift */,
+				BD0EF087270FB7AC00555913 /* Views */,
+				BD0EF088270FB7B500555913 /* ViewModels */,
+				BD0EF089270FB7C400555913 /* Models */,
+				BD0EF08A270FB7DA00555913 /* Resources */,
+				BD0EF08C270FB7F300555913 /* Helpers */,
 				BD0EF07D270FB6A000555913 /* Assets.xcassets */,
 				BD0EF07F270FB6A000555913 /* Preview Content */,
 			);
@@ -65,6 +71,43 @@
 				BD0EF080270FB6A000555913 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BD0EF087270FB7AC00555913 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD0EF07B270FB69E00555913 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BD0EF088270FB7B500555913 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BD0EF08D270FB91A00555913 /* ContentModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BD0EF089270FB7C400555913 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BD0EF08A270FB7DA00555913 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BD0EF08C270FB7F300555913 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +180,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD0EF07C270FB69E00555913 /* ContentView.swift in Sources */,
+				BD0EF07C270FB69E00555913 /* HomeView.swift in Sources */,
 				BD0EF07A270FB69E00555913 /* LearningApp.swift in Sources */,
+				BD0EF08E270FB91A00555913 /* ContentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
