@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0ED7E32723AFBC00002309 /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0ED7E22723AFBC00002309 /* RectangleCard.swift */; };
 		BD0EF07A270FB69E00555913 /* LearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EF079270FB69E00555913 /* LearningApp.swift */; };
 		BD0EF07C270FB69E00555913 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EF07B270FB69E00555913 /* HomeView.swift */; };
 		BD0EF07E270FB6A000555913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD0EF07D270FB6A000555913 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD0ED7E22723AFBC00002309 /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
 		BD0EF076270FB69E00555913 /* Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0EF079270FB69E00555913 /* LearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningApp.swift; sourceTree = "<group>"; };
 		BD0EF07B270FB69E00555913 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				BD71E7E92719C47A000E7146 /* ContentViewRow.swift */,
 				BD71E7EB2719C61C000E7146 /* ContentDetailView.swift */,
 				BD15333E271DBC1500C931B3 /* CodeTextView.swift */,
+				BD0ED7E22723AFBC00002309 /* RectangleCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				BD15333F271DBC1500C931B3 /* CodeTextView.swift in Sources */,
 				BD71E7EA2719C47A000E7146 /* ContentViewRow.swift in Sources */,
 				BD0EF08E270FB91A00555913 /* ContentModel.swift in Sources */,
+				BD0ED7E32723AFBC00002309 /* RectangleCard.swift in Sources */,
 				BD0EF094270FE83D00555913 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

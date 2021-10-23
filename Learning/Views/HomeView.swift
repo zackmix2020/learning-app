@@ -34,8 +34,12 @@ struct HomeView: View {
                                                 ContentsView()
                                         .onAppear(perform: {
                                             model.beginModule(moduleid: module.id)
-                                        }), label: {
-                                                
+                                            print(model.currentContentSelected)
+                                        }),
+                                    tag: module.id,
+                                    selection: $model.currentContentSelected,
+                                    label: {
+                                        //Learning Card
                                         HomeViewRow(image: module.content.image, title: "learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
                                 })
                                 
