@@ -31,22 +31,32 @@ struct HomeView: View {
                                 
                                 NavigationLink(
                                     destination:
-                                                ContentsView()
+                                        ContentsView()
                                         .onAppear(perform: {
-                                            model.beginModule(moduleid: module.id)
-                                            print(model.currentContentSelected)
+                                            model.beginModule(module.id)
                                         }),
                                     tag: module.id,
-                                    selection: $model.currentContentSelected,
-                                    label: {
+                                    selection: $model.currentContentSelected) {
                                         //Learning Card
                                         HomeViewRow(image: module.content.image, title: "learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
-                                })
-                                
+                                }
+                                //test card
+                                NavigationLink(
+                                    destination:
+                                        TestView()
+                                        .onAppear(perform: {
+                                            model.beginTest(module.id)
+                                        }),
+                                    tag: module.id,
+                                    selection: $model.currentTestSelected) {
+                                    // test card
+                                    HomeViewRow(image: module.test.image, title: "\(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Lessons", time: module.test.time)
+                                }
                             
+                                NavigationLink (destination: EmptyView()) {
+                                    EmptyView()
+                                }
                             
-                            // test card
-                            HomeViewRow(image: module.test.image, title: "\(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Lessons", time: module.test.time)
                             }
                         }
                         
@@ -59,7 +69,6 @@ struct HomeView: View {
             .navigationTitle("Get Started")
             
         }
-        .navigationViewStyle(.stack)
         
     }
 }
