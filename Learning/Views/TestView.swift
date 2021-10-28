@@ -90,20 +90,34 @@ struct TestView: View {
                 // submit button
                 Button {
                     
-                    // change submitted stste to true
-                    submitted = true
-                    
-                    // check thr anserr
-                    if selectedAnswerIndex == model.currentQuestion!.correctIndex {
-                        numCorrect += 1
+                    //check if anserr has been submitted
+                    if submitted == true {
+                        // answer has already been submitted move to next question
+                        model.nextQuestion()
+                        
+                        // reset property
+                        submitted = false
+                        selectedAnswerIndex = nil
                     }
+                    else {
+                        // submit anser
+                        // change submitted stste to true
+                        submitted = true
+                        
+                        // check thr anserr
+                        if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                            numCorrect += 1
+                        }
+                    }
+                    
+                   
                     
                 } label: {
                     ZStack {
                         RectangleCard(color: .green)
                             .frame(height: 48)
                         
-                        Text("submit")
+                        Text(buttonText)
                             .bold()
                             .foregroundColor(Color.white)
                         
@@ -120,6 +134,22 @@ struct TestView: View {
             ProgressView()
         }
 
+    }
+    
+    var buttonText:String {
+        //   check if anseer has been submitted
+        if submitted == true {
+            if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+                return "finished"
+            }
+            else {
+                
+            return "next" // or finished
+            }
+        }
+        else {
+            return "submit"
+        }
     }
 }
 
