@@ -35,8 +35,10 @@ class Contentmodel: ObservableObject {
     @Published var currentTestSelected:Int?
     
     init() {
-        
+        // parse local included json dada
         getLocalData()
+        // donwload remote json file and parse data
+        getRemoteData()
     }
     
     //MARK: data methods
@@ -75,10 +77,63 @@ class Contentmodel: ObservableObject {
             
         }
         
-        catch{
+        catch {
             //log error
             print("couldnt parse style")
         }
+        
+    }
+    
+    func getRemoteData() {
+        
+        // string path
+        
+        let urlString = "https://zackmix2020.github.io/LearningApp-data/data2.json"
+        
+        // create url object
+        let url = URL(string: urlString)
+        
+        guard url != nil else {
+            //couldnt creat url
+            return
+        }
+        
+        // create urlRequest object
+        let request = URLRequest(url: url!)
+        
+        // get the session and kick off task
+        let session = URLSession.shared
+        
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            
+            // check if theres an error
+            guard error == nil else {
+                return
+            }
+            
+            do {
+                // create json decoder and decode
+                let decoder = JSONDecoder()
+            
+            
+            // decode
+                let modules = try decoder.decode([Module].self, from: data!)
+                
+                // append parsed modules into modules property
+                DispatchQueue.main.async {
+                    
+                    self.modules += modules
+                }
+              
+            }
+            catch {
+                //couldnt parse
+                
+            }
+            
+        }
+        // kick off data task
+        dataTask.resume()
         
     }
     
@@ -132,6 +187,10 @@ class Contentmodel: ObservableObject {
     }
     
     func hasNextLesson() -> Bool {
+        
+        guard currentModule != nil else {
+            return false
+        }
         
         return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
     }

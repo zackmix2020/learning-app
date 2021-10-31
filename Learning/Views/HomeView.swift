@@ -58,6 +58,7 @@ struct HomeView: View {
                                 }
                             
                             }
+                            .padding(.bottom, 10)
                         }
                         
                     }
@@ -67,7 +68,17 @@ struct HomeView: View {
                 }
             }
             .navigationTitle("Get Started")
-            
+            .onChange(of: model.currentContentSelected) { changeValue in
+                if changeValue == nil {
+                    model.currentModule = nil
+                }
+                    
+            }
+            .onChange(of: model.currentTestSelected) { changeValue in
+                if changeValue == nil {
+                    model.currentModule = nil
+                }
+            }
         }
         
     }
